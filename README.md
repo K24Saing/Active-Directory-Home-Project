@@ -39,7 +39,7 @@ The Active Directory Detection Home Lab project aimed to establish a real-world 
 7. I configured the receiving port to start receiving data from both Windows Machines on Splunk.<br>
 8. On the Windows Server, I installed Active Directory Domain Services (ADDS) and promoted it as a domain controller.<br>
 9. Added a new user to the Active Directory and configured the Windows 10 Pro machine to join to the domain controller's DNS server. Logged in as the new user from the Active Directory.<br>
-10. On my Kali Linux machine, I made a new directory called "ad-project" and copied the "rockyou.txt" file that comes with Kali Linux into the new directory. I then imported the first 20 linws of rockyou.txt and saved it as a new file called passwords.txt.<br>
+10. On my Kali Linux machine, I made a new directory called "ad-project" and copied the "rockyou.txt" file that comes with Kali Linux into the new directory. I then imported the first 20 lines of rockyou.txt and saved it as a new file called passwords.txt.<br>
 11. Using nano text editor for Linux, I added the password of my new user account on my Windows 10 Pro machine to the passwords.txt <br>
 12. I enabled RDP connections to the target Windows 10 Pro Machine, and ran hydra -b rdp -u {user account name} passwords.txt -s {target IP address} <br>
 13. After RDP success, I confirmed the log event in my splunk with EventCode: 4624 for successful log ins. <br>
